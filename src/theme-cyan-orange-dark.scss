@@ -1,0 +1,22 @@
+@use '@angular/material' as mat;
+@include mat.core();
+
+$theme-cyan-orange-dark: mat.define-theme(
+  (
+    color: (
+      theme-type: dark,
+      primary: mat.$cyan-palette,
+      tertiary: mat.$orange-palette,
+    ),
+    density: (
+      scale: 0,
+    ),
+  )
+);
+
+html {
+  @include mat.all-component-themes($theme-cyan-orange-dark);
+}
+
+@include mat.color-variants-backwards-compatibility($theme-cyan-orange-dark);
+@include mat.typography-hierarchy($theme-cyan-orange-dark);

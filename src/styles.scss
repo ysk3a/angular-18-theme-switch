@@ -1,0 +1,56 @@
+/* You can add global styles to this file, and also import other style files */
+@use './theme' as theme;
+// @use './theme.scss' as theme;
+
+@use '@angular/material' as mat;
+
+// $theme-azure-blue-light: mat.define-theme(
+//   (
+//     color: (
+//       theme-type: light,
+//       primary: mat.$azure-palette,
+//       tertiary: mat.$blue-palette,
+//     ),
+//     density: (
+//       scale: 0,
+//     ),
+//   )
+// );
+
+// $theme-cyan-orange-dark: mat.define-theme(
+//   (
+//     color: (
+//       theme-type: dark,
+//       primary: mat.$cyan-palette,
+//       tertiary: mat.$orange-palette,
+//     ),
+//     density: (
+//       scale: 0,
+//     ),
+//   )
+// );
+
+body {
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  margin: 0;
+  height: 100%;
+}
+
+html {
+  height: 100%;
+}
+
+// @include mat.core();
+// @include mat.color-variants-backwards-compatibility($theme);
+
+.theme-cyan-orange-dark {
+  @include theme.create-theme-cyan-orange-dark();
+}
+
+.theme-azure-blue-light {
+  @include theme.create-theme-azure-blue-light();
+}
+
+//              "@angular/material/prebuilt-themes/azure-blue.css",
+// "@angular/material/prebuilt-themes/cyan-orange.css",
+//

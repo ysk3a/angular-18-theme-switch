@@ -1,0 +1,48 @@
+@use '@angular/material' as mat;
+@use 'theme-azure-blue-light' as lightTheme;
+@use 'theme-cyan-orange-dark' as darkTheme;
+@use 'sass:map';
+// @use '../app/home/home.component.theme' as homeComponent;
+
+@include mat.core();
+// mat.$theme-ignore-duplication-warnings: true;
+
+@mixin create-theme-cyan-orange-dark() {
+  $theme: map.deep-merge(
+    darkTheme.$theme-cyan-orange-dark,
+    (
+      // color: (
+      //   background: (
+      //     background: #1f1a24,
+      //   ),
+      // ),
+    )
+  );
+
+  // mat-card-content,
+  // mat-card-title {
+  //   color: #f0f0f0;
+  // }
+
+  @include mat.all-component-themes($theme);
+  // @include mat.strong-focus-indicators();
+  // @include mat.strong-focus-indicators-theme(lightTheme.$theme-azure-blue-light);
+}
+
+@mixin create-theme-azure-blue-light() {
+  $theme: map.deep-merge(
+    lightTheme.$theme-azure-blue-light,
+    (
+      // color: (
+      //   background: (
+      //     background: #f0f0f0,
+      //   ),
+      // ),
+    )
+  );
+
+  @include mat.all-component-themes($theme);
+  // @include mat.strong-focus-indicators-theme($theme);
+  // @include mat.strong-focus-indicators();
+  // @include mat.strong-focus-indicators-theme(darkTheme.$theme-cyan-orange-dark);
+}
